@@ -1,0 +1,16 @@
+language: java
+jdk:
+  - openjdk8 # minimum Java for IntelliJ
+before_install:
+  - chmod +x gradlew
+# not yet
+#notifications:
+#  email:
+#    on_success: always
+#    on_failure: always
+#    recipients:
+#      - bren@juanantonio.info
+script:
+  - ./gradlew clean build
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
